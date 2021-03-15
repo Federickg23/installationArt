@@ -4,6 +4,7 @@
 This repository contains arduno and python code that, together, can be used to create a door mounted system to detect if there is anyone outisde before you open your door, just as an extra precautionary covid measure. To make this code work, you need an ESP32 wrover module with its included camera (though you can use a different camera than the ESP32 comes with).  
 
 [Video Demo](https://youtu.be/zhtUE-D50o8)
+
 [Video demo but another one](https://youtu.be/RZlgFgfNq5Q)
 
 # Table of Contents <!-- omit in toc -->

@@ -17,8 +17,8 @@
 #define IMAGE_DIFF_THRESHOLD 0.1
 #define DEBUG 0
 
-const char* ssid = "LAPTOP-G2HPL4ET 9414";
-const char* password = "]45n969R";
+const char* ssid = "********";
+const char* password = "********";
 WiFiUDP Udp;
 unsigned int localUdpPort = 4210;  //  port to listen on
 char incomingPacket[255];  // buffer for incoming packets
