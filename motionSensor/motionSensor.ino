@@ -23,7 +23,7 @@ WiFiUDP Udp;
 unsigned int localUdpPort = 4210;  //  port to listen on
 char incomingPacket[255];  // buffer for incoming packets
 
-
+bool motion = false; 
 uint16_t prev_frame[H][W] = { 0 };
 uint16_t current_frame[H][W] = { 0 };
 
@@ -87,7 +87,10 @@ void loop() {
 
     if (motion_detect()) {
         Serial.println("Motion detected");
-        
+        motion = true; 
+    }
+    else {
+      motion = false;          
     }
 
     update_frame();
@@ -95,7 +98,7 @@ void loop() {
     // once we know where we got the inital packet from, send data back to that IP address and port
     Udp.beginPacket(Udp.remoteIP(), Udp.remotePort());
     // Just test touch pin - Touch0 is T0 which is on GPIO 4.
-    Udp.printf(String(touchRead(T0)).c_str(),2);
+    Udp.printf(String(motion).c_str(),2);
     Udp.endPacket();
     delay(1000);
 }
